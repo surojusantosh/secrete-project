@@ -1,0 +1,21 @@
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure the app takes up the full screen */
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Prevents scrollbars */
+  font-family: 'Arial', sans-serif;
+  background-color: #ffe4e6; /* Matches our pink theme just in case */
+}
+
+/* Remove default link styles if you use them later */
+a {
+  text-decoration: none;
+  color: inherit;
+}
