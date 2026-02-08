@@ -1,32 +1,31 @@
 import { useState } from 'react';
 import confetti from 'canvas-confetti';
 
-// IMPORTS FOR YOUR PHOTOS
-// Make sure the file names match exactly (case sensitive!)
+// IMPORTS FOR YOUR ASSETS
 import photo1 from '../assets/1.jpeg';
 import photo2 from '../assets/2.jpeg';
 import photo3 from '../assets/3.jpeg';
+import askingGif from '../assets/4.gif'; // Your local GIF
 
 export default function ValentinePage() {
   const [noCount, setNoCount] = useState(0);
   const [yesPressed, setYesPressed] = useState(false);
   const [position, setPosition] = useState({ top: "50%", left: "50%" });
 
-  // YOUR PHOTOS ARRAY
   const memories = [
     {
       id: 1,
-      src: photo1, // Using the imported variable
+      src: photo1,
       caption: "Where it all started..."
     },
     {
       id: 2,
-      src: photo2, // Using the imported variable
+      src: photo2,
       caption: "All the crazy times"
     },
     {
       id: 3,
-      src: photo3, // Using the imported variable
+      src: photo3,
       caption: "And so many more to come"
     }
   ];
@@ -87,10 +86,10 @@ export default function ValentinePage() {
             ← Back
           </button>
 
-          {/* SUCCESS GIF */}
+          {/* SUCCESS GIF (Stays as the celebration gif) */}
           <img 
             src="https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif" 
-            alt="penguin-kiss" 
+            alt="celebration-kiss" 
             className="success-gif"
           />
           <h1 className="success-text">Yay!!! I love you!! ❤️</h1>
@@ -114,7 +113,7 @@ export default function ValentinePage() {
           <div className="gallery">
             {memories.map((photo) => (
               <div key={photo.id} className="polaroid">
-                <img src={photo.src} alt="us" />
+                <img src={photo.src} alt="memory" />
                 <p>{photo.caption}</p>
               </div>
             ))}
@@ -122,11 +121,11 @@ export default function ValentinePage() {
         </div>
       ) : (
         <>
-          {/* ASKING GIF */}
+          {/* ASKING GIF (Now using your local 4.gif) */}
           <img 
             className="main-gif" 
-            src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2QzbG51b3Z2eG15ZXZqY3J4bnZ5b3J6Z3h6aHZ5aG55b3J6Z3h6aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LZZyixOnHwDDy/giphy.gif" 
-            alt="cute-penguin" 
+            src={askingGif} 
+            alt="asking-gif" 
           />
           <h1 className="text">Will you be my Valentine?</h1>
           <div className="button-container">
